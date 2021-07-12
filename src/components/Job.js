@@ -6,14 +6,14 @@ const Job = ({job, removeJob, editJob, editing, viewJob}) => (
       <p>{job.position}</p>
       <p>{job.description}</p>
 
-      { editing ? ( null
+      {/* { editing ? ( null
       ): (
         <button onClick={() => { editJob(job)}}>Edit</button>
-      )}
+      )} */}
 
       <button onClick={() => removeJob(job.id)}>Remove</button>
       {/* <button onClick={() => viewJob(job.id)}>View</button> */}
-      <hr/>
+     
     </div>
 );
 

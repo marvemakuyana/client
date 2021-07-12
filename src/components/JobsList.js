@@ -87,23 +87,16 @@ const JobsList = props => {
     return(
         <div>
             <div className ='jobs-list'>
-                <div>
-                    {editing ? (
-                        <EditJobForm
-                            setEditing={setEditing}
-                            currentJob={currentJob}
-                            updateJob={updateJob} />
-                    ):(
-                        <NewJobForm addJob={addJob} initialFormState={initialFormState} />
-                    )}
-                </div>
-                <br/>
-                <hr/>
+            <Link to='/create'>Create Job</Link>
+            <hr/>
                 {jobs.map((job) =>(
-                 
-                    <Job key={job.id}  job={job}  removeJob={removeJob} editJob={editJob} editing={editing} />
-                  
+                 <div key={job.id}>
+                    <Job job={job}  removeJob={removeJob} editJob={editJob} editing={editing} />
+                    <Link to={"/jobs/"+job.id}>edit</Link>
+                    <hr/>
+                </div>
                 ))}
+                
           </div>
         </div>
     );

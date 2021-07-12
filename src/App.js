@@ -1,19 +1,22 @@
 import './App.css';
 import JobsList from './components/JobsList';
-import ViewJob from './components/ViewJob';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import EditJobForm from './components/EditJobForm';
+import NewJobForm from './components/NewJobForm';
+import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 
 function App() {
   return (
     <div className="App">
       <h1>Jobs</h1>
-      <JobsList /> 
-      {/* <Router>
+      
+      {/* <JobsList />  */}
+      <Router>
         <Switch>
-        <Route path='/' exact  component={JobsList}/>
-          <Route path ='/job/:id'  component={ViewJob} />   
+          <Route path='/' exact  component={JobsList}/>
+          <Route path ='/jobs/:id'  component={EditJobForm} /> 
+          <Route path='/create' component={NewJobForm} />  
           </Switch>
-        </Router> */}
+        </Router>
     </div>
   );
 }
